@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { cn } from '@/lib/utils'
-import HeaderMenu from "@/components/HeaderMenu";
+import { cn } from "@/lib/utils";
+
+import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-heading',
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -22,11 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(
-        'antialiased',
-        inter.className,
-      )}>
-        <HeaderMenu />
+      <body className={cn("antialiased", inter.className)}>
+        <Header />
         {children}
       </body>
     </html>
