@@ -9,9 +9,16 @@ import {
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import MenuIcon from "./MenuIcon";
-import LogoHeader from "./Logo";
+
+import Logo from "@/assets/img/logo_header.svg";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function HeaderMenu() {
@@ -42,7 +49,7 @@ export default function HeaderMenu() {
         <div className="w-[300px]">
           <Sheet>
             <SheetTrigger asChild>
-              <LogoHeader />
+              <Image src={Logo} alt="Logo" />
             </SheetTrigger>
           </Sheet>
         </div>
@@ -142,8 +149,9 @@ export default function HeaderMenu() {
         </SheetTrigger>
 
         <SheetContent side="left">
+          <Image src={Logo} alt="Logo" />
+          <SheetTitle hidden>Menu</SheetTitle>
           <Link href="#" prefetch={false}>
-            <LogoHeader />
             <span className="sr-only">TechAssist</span>
           </Link>
           <div className="grid gap-2 py-6">
